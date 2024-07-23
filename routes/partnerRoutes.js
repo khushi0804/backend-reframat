@@ -1,8 +1,10 @@
-const express = require('express');
+
+import express from 'express';
+import { getAllPartners, getPartnerById } from '../controllers/partnerController.js';
+
 const router = express.Router();
-const { getAllPartners, getPartnerById } = require('../controllers/partnerController');
 
 router.get('/partners', getAllPartners);
 router.get('/partners/:id', getPartnerById);
 
-module.exports = router;
+export default router;

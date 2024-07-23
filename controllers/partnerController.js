@@ -1,4 +1,4 @@
-const db = require('../models/db');
+import db from '../models/db.js';
 
 const getAllPartners = (req, res) => {
     const sql = 'SELECT * FROM partners';
@@ -6,7 +6,6 @@ const getAllPartners = (req, res) => {
         if (err) {
             return res.status(500).send(err);
         }
-
         res.json(result);
     });
 };
@@ -18,9 +17,10 @@ const getPartnerById = (req, res) => {
         if (err) {
             return res.status(500).send(err);
         }
-
         res.json(result[0]);
     });
 };
 
-module.exports = { getAllPartners, getPartnerById };
+export { getAllPartners, getPartnerById };
+
+
